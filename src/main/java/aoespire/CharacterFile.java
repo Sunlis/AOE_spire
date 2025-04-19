@@ -21,7 +21,7 @@ import com.megacrit.cardcrawl.screens.CharSelectInfo;
 
 import aoespire.cards.Defend;
 import aoespire.cards.Strike;
-import aoespire.relics.TodoItem;
+import aoespire.relics.AngyMask;
 
 import static aoespire.CharacterFile.Enums.TODO_COLOR;
 import static aoespire.ModFile.*;
@@ -71,7 +71,6 @@ public class CharacterFile extends CustomPlayer {
 
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(TodoItem.ID);
         return retVal;
     }
 

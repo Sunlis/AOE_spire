@@ -40,7 +40,7 @@ public class ModFile implements
         EditCharactersSubscriber,
         AddAudioSubscriber {
 
-    public static final String modID = "aoespire"; //TODO: Change this.
+    public static final String modID = "aoespire";
 
     public static String makeID(String idText) {
         return modID + ":" + idText;
@@ -117,17 +117,19 @@ public class ModFile implements
 
     @Override
     public void receiveEditCharacters() {
-        BaseMod.addCharacter(new CharacterFile(CharacterFile.characterStrings.NAMES[1], CharacterFile.Enums.THE_TODO),
-            CHARSELECT_BUTTON, CHARSELECT_PORTRAIT, CharacterFile.Enums.THE_TODO);
+        // Register Character
+        // BaseMod.addCharacter(new CharacterFile(CharacterFile.characterStrings.NAMES[1], CharacterFile.Enums.THE_TODO),
+        //     CHARSELECT_BUTTON, CHARSELECT_PORTRAIT, CharacterFile.Enums.THE_TODO);
         
-        new AutoAdd(modID)
-            .packageFilter(AbstractEasyPotion.class)
-            .any(AbstractEasyPotion.class, (info, potion) -> {
-                if (potion.pool == null)
-                    BaseMod.addPotion(potion.getClass(), potion.liquidColor, potion.hybridColor, potion.spotsColor, potion.ID);
-                else
-                    BaseMod.addPotion(potion.getClass(), potion.liquidColor, potion.hybridColor, potion.spotsColor, potion.ID, potion.pool);
-            });
+        // Register potions
+        // new AutoAdd(modID)
+        //     .packageFilter(AbstractEasyPotion.class)
+        //     .any(AbstractEasyPotion.class, (info, potion) -> {
+        //         if (potion.pool == null)
+        //             BaseMod.addPotion(potion.getClass(), potion.liquidColor, potion.hybridColor, potion.spotsColor, potion.ID);
+        //         else
+        //             BaseMod.addPotion(potion.getClass(), potion.liquidColor, potion.hybridColor, potion.spotsColor, potion.ID, potion.pool);
+        //     });
     }
 
     @Override
@@ -148,14 +150,14 @@ public class ModFile implements
 
     @Override
     public void receiveEditCards() {
-        new AutoAdd(modID)
-            .packageFilter(AbstractEasyDynamicVariable.class)
-            .any(DynamicVariable.class, (info, var) -> 
-                BaseMod.addDynamicVariable(var));
-        new AutoAdd(modID)
-                .packageFilter(AbstractEasyCard.class)
-                .setDefaultSeen(true)
-                .cards();
+        // new AutoAdd(modID)
+        //     .packageFilter(AbstractEasyDynamicVariable.class)
+        //     .any(DynamicVariable.class, (info, var) -> 
+        //         BaseMod.addDynamicVariable(var));
+        // new AutoAdd(modID)
+        //         .packageFilter(AbstractEasyCard.class)
+        //         .setDefaultSeen(true)
+        //         .cards();
     }
 
     @Override
